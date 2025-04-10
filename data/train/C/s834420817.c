@@ -1,0 +1,51 @@
+#include<stdio.h>
+
+#define SET_MAX 1024
+
+/* ????????????????????£?¨? */
+void matrix_cal(double array[2][3]);
+
+/* main??¢??° */
+int main(void){
+	double a, b, c, d, e, f;
+	double array[SET_MAX][2][3];
+	int set_cnt, i;
+
+	for(set_cnt = 0;set_cnt < SET_MAX;set_cnt++){
+		if(scanf("%lf %lf %lf %lf %lf %lf", &a, &b, &c, &d, &e, &f) == EOF)break;
+		array[set_cnt][0][0] = a;
+		array[set_cnt][0][1] = b;
+		array[set_cnt][0][2] = c;
+		array[set_cnt][1][0] = d;
+		array[set_cnt][1][1] = e;
+		array[set_cnt][1][2] = f;
+	}
+
+	for(i = 0;i < set_cnt;i++){
+		matrix_cal(array[i]);
+		printf("%.3f %.3f\n", array[i][0][2], array[i][1][2]);
+	}
+
+	return 0;
+}
+
+/* ??????????????£?????£???????¨????????§£????±?????????¢??° */
+void matrix_cal(double array[2][3]){
+	/* array[0][0]???1????????? */
+	array[0][1] /= array[0][0];
+	array[0][2] /= array[0][0];
+	array[0][0] = 1.0;
+
+	/* array[1][0]???0????????? */
+	array[1][1] -= array[1][0] * array[0][1];
+	array[1][2] -= array[1][0] * array[0][2];
+	array[1][0] = 0.0;
+
+	/* array[1][1]???1????????? */
+	array[1][2] /= array[1][1];
+	array[1][1] = 1.0;
+
+	/* array[0][1]???0????????? */
+	array[0][2] -= array[0][1] * array[1][2];
+	array[0][1] = 0.0;
+}
