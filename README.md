@@ -31,6 +31,8 @@ Built using **PyTorch**, trained on a balanced dataset of code samples.
 - Small confusions among syntactically similar languages (e.g. Python vs JavaScript)
 - Model shows strong robustness across diverse syntax styles
 
+![](classification_report.png)
+
 ## 🚀 How to Run
 
 ```bash
