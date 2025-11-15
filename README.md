@@ -1,14 +1,14 @@
-# 🧠 Code Language Classifier with BiLSTM + Attention
+# Code Language Classifier with BiLSTM + Attention
 
 This project builds a deep learning classifier that predicts the programming language of code snippets using a custom neural network architecture. It leverages a bidirectional LSTM with attention to capture language-specific patterns and structure in code.
 
-## 📂 Dataset
+## Dataset
 
 - Source: [IBM Project CodeNet](https://developer.ibm.com/exchanges/data/all/project-codenet/)
 - Contains source code files in 10 different programming languages
 - Each file is labeled by its language and processed into token sequences
 
-## 🧱 Architecture
+## Architecture
 
 - Embedding layer to map tokens to dense vectors
 - Bi-directional LSTM to capture forward & backward context
@@ -17,7 +17,7 @@ This project builds a deep learning classifier that predicts the programming lan
 
 Built using **PyTorch**, trained on a balanced dataset of code samples.
 
-## 🧹 Preprocessing
+## Preprocessing
 
 - Line-by-line file reading, preserving syntax structure
 - Tokenization at word/symbol level
@@ -25,7 +25,7 @@ Built using **PyTorch**, trained on a balanced dataset of code samples.
 - Conversion to PyTorch tensors
 - Train/validation split
 
-## 📈 Results
+## Results
 
 - 7 out of 10 languages classified with **F1 = 1.00**
 - Small confusions among syntactically similar languages (e.g. Python vs JavaScript)
@@ -33,7 +33,7 @@ Built using **PyTorch**, trained on a balanced dataset of code samples.
 
 ![](classification_report.png)
 
-## 🚀 How to Run
+## How to Run
 
 ```bash
 # Clone this repo
